@@ -96,16 +96,6 @@ a { text-decoration: none; color: inherit; cursor: none; }
 }
 
 /* ===== CUSTOM CURSOR ===== */
-.cursor-dot {
-  position: fixed;
-  width: 6px; height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s, width 0.2s, height 0.2s, background 0.2s;
-}
 .cursor-ring {
   position: fixed;
   width: 36px; height: 36px;
@@ -121,7 +111,6 @@ a { text-decoration: none; color: inherit; cursor: none; }
   border-color: var(--gold);
   opacity: 0.6;
 }
-.cursor-dot.hovering { width: 4px; height: 4px; }
 
 /* ===== HEADER ===== */
 .header {
