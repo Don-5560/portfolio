@@ -106,6 +106,14 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
   revealObs.observe(el);
 });
 
+// ===== FIXED CTA =====
+const fixedCta = document.getElementById('fixed-cta');
+if (fixedCta) {
+  window.addEventListener('scroll', () => {
+    fixedCta.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+}
+
 // ===== CARD SHINE =====
 document.querySelectorAll('.tilt-card').forEach(card => {
   const shine = card.querySelector('.card-shine');
