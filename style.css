@@ -222,14 +222,23 @@ a { text-decoration: none; color: inherit; cursor: none; }
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
 }
-.hero::before, .hero::after { display: none; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/fuji-bg.jpg') center 60%/cover no-repeat;
+  opacity: 0.06;
+  filter: grayscale(100%);
+  z-index: 0;
+}
+.hero::after { display: none; }
 .hero-orb { display: none; }
 
 .hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 80px 20px 60px;
+  padding: 80px 20px 100px;
 }
 
 .hero-label-wrap {
