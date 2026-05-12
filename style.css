@@ -825,6 +825,74 @@ a { text-decoration: none; color: inherit; }
   font-size: 11px;
 }
 
+/* ===== PROCESS ===== */
+.process { background: var(--bg); }
+
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  justify-content: center;
+}
+
+.process-step-item {
+  flex: 1;
+  max-width: 180px;
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  transition: border-color 0.3s;
+}
+.process-step-item:hover { border-color: rgba(201,168,76,0.35); }
+
+.process-step-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.5;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.process-step-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.process-step-text {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.process-step-arrow {
+  flex-shrink: 0;
+  align-self: center;
+  color: var(--gold);
+  opacity: 0.4;
+  font-size: 18px;
+  padding: 0 4px;
+  margin-top: -20px;
+}
+
+@media (max-width: 768px) {
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .process-step-item { max-width: 100%; width: 100%; }
+  .process-step-arrow {
+    transform: rotate(90deg);
+    margin: 4px 0;
+    padding: 0;
+  }
+}
+
 /* ===== CONTACT ===== */
 .contact {
   background: var(--bg);
