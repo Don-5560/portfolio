@@ -855,28 +855,30 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 768px) {
   .process-cards {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0;
   }
   .process-arrow {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px 0;
+    padding: 8px 0;
     color: var(--gold);
   }
   .process-card {
     display: flex;
     flex-direction: row;
+    margin-bottom: 0;
   }
   .process-card-img {
-    width: 120px;
-    min-width: 120px;
+    width: 130px;
+    min-width: 130px;
     flex-shrink: 0;
     aspect-ratio: unset;
+    height: auto;
   }
   .process-card-body {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
