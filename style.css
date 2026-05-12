@@ -825,6 +825,158 @@ a { text-decoration: none; color: inherit; }
   font-size: 11px;
 }
 
+/* ===== CAMPAIGN ===== */
+.campaign {
+  background: #fdf6ec;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-ribbon {
+  background: #c0392b;
+  text-align: center;
+  padding: 12px 0;
+  margin-bottom: 56px;
+}
+.campaign-ribbon-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.campaign-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 48px;
+  line-height: 1.5;
+}
+.campaign-title-big {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 900;
+  color: #c0392b;
+  display: block;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.campaign-card {
+  background: #fff;
+  border: 2px solid #e8d5b0;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.campaign-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+}
+
+.campaign-card--red {
+  background: #c0392b;
+  border-color: #c0392b;
+}
+
+.campaign-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.campaign-limit-tag {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  background: #ffd700;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 5px 18px;
+  border-radius: 0 0 8px 8px;
+  white-space: nowrap;
+}
+
+.campaign-card-catch {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.campaign-card-main {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.campaign-big-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(42px, 6vw, 56px);
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+}
+.campaign-big-text small {
+  font-size: 0.5em;
+  font-weight: 900;
+}
+
+.campaign-card-note {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.9;
+}
+
+.btn-campaign {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 18px 48px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 20px rgba(192,57,43,0.4);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.btn-campaign:hover {
+  background: #e74c3c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(192,57,43,0.5);
+}
+
+@media (max-width: 768px) {
+  .campaign-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== PROCESS ===== */
 .process { background: var(--bg); }
 
