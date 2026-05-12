@@ -768,7 +768,7 @@ a { text-decoration: none; color: inherit; cursor: none; }
   }
   .hero-btns .btn { justify-content: center; }
   .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
-  .hero-content { padding: 60px 20px 50px; }
+  .hero-content { padding: 60px 20px 96px; }
   .section-header { margin-bottom: 60px; }
 }
 
