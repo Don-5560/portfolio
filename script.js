@@ -64,6 +64,16 @@ if (ring && !isTouchDevice()) {
   ring.style.display = 'none';
 }
 
+// ===== FLOATING CTA =====
+const floatCta = document.getElementById('float-cta');
+if (floatCta) {
+  const hero = document.getElementById('home');
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 400;
+    floatCta.classList.toggle('visible', heroBottom < 0);
+  }, { passive: true });
+}
+
 // ===== HEADER SCROLL =====
 const header = document.getElementById('header');
 if (header) {
@@ -105,14 +115,6 @@ const revealObs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
   revealObs.observe(el);
 });
-
-// ===== FIXED CTA =====
-const fixedCta = document.getElementById('fixed-cta');
-if (fixedCta) {
-  window.addEventListener('scroll', () => {
-    fixedCta.classList.toggle('visible', window.scrollY > 500);
-  }, { passive: true });
-}
 
 // ===== CARD SHINE =====
 document.querySelectorAll('.tilt-card').forEach(card => {
