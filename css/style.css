@@ -690,12 +690,12 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   margin: 40px 0 32px;
 }
 .cv2-images img {
   width: 100%;
-  max-width: 680px;
+  max-width: 520px;
   height: auto;
 }
 
