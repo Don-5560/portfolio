@@ -36,33 +36,7 @@ function triggerHeroAnimations() {
   setTimeout(() => document.querySelector('.hero-btns')?.classList.add('visible'), 400);
 }
 
-// ===== CUSTOM CURSOR (desktop only) =====
-const ring = document.getElementById('cursor-ring');
-const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
 
-if (ring && !isTouchDevice()) {
-  let ringX = 0, ringY = 0, curX = 0, curY = 0;
-
-  document.addEventListener('mousemove', e => {
-    curX = e.clientX;
-    curY = e.clientY;
-  });
-
-  (function animateRing() {
-    ringX += (curX - ringX) * 0.12;
-    ringY += (curY - ringY) * 0.12;
-    ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  })();
-
-  document.querySelectorAll('a, button, .skill-tag').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-  });
-} else if (ring) {
-  ring.style.display = 'none';
-}
 
 // ===== FLOATING CTA =====
 const floatCta = document.getElementById('float-cta');

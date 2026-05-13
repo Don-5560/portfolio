@@ -75,28 +75,6 @@ a { text-decoration: none; color: inherit; }
   color: var(--muted);
 }
 
-/* ===== CUSTOM CURSOR (PC only) ===== */
-@media (hover: hover) and (pointer: fine) {
-  body, a, button { cursor: none; }
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 32px; height: 32px;
-  border: 1.5px solid rgba(29,29,31,0.2);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.2s, opacity 0.2s;
-  mix-blend-mode: multiply;
-}
-.cursor-ring.hovering {
-  width: 56px; height: 56px;
-  border-color: var(--gold);
-  opacity: 0.6;
-}
-
 /* ===== HEADER ===== */
 .header {
   position: fixed;
