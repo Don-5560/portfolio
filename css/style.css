@@ -1245,6 +1245,7 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 768px) {
   .section { padding: 100px 0; }
+  .campaign-v2 { padding-top: 0; }
   .nav, .availability { display: none; }
   .hamburger { display: flex; }
   .works-grid { grid-template-columns: 1fr; }
