@@ -100,6 +100,20 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
   revealObs.observe(el);
 });
 
+// ===== CAMPAIGN SLIDE =====
+const slideObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      slideObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.cv2-slide').forEach(el => {
+  slideObs.observe(el);
+});
+
 // ===== CARD SHINE =====
 document.querySelectorAll('.tilt-card').forEach(card => {
   const shine = card.querySelector('.card-shine');

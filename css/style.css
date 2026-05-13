@@ -1857,3 +1857,14 @@ details[open] .faq-q::after { transform: rotate(45deg); }
   color: var(--text-muted);
   margin-bottom: 20px;
 }
+
+/* ===== CAMPAIGN SLIDE ANIMATION ===== */
+.cv2-slide {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.cv2-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
