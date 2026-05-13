@@ -697,7 +697,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 6px;
   margin: 24px 0 20px;
-  padding: 0 30px;
+  padding: 0 8px;
 }
 .cv2-images img {
   width: 100%;
