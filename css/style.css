@@ -1269,7 +1269,8 @@ a { text-decoration: none; color: inherit; }
   }
   .hero-btns .btn { justify-content: center; }
   .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
-  .hero-content { padding: 60px 20px 96px; }
+  .hero { min-height: 100vh; }
+  .hero-content { padding: 140px 20px 80px; }
   .section-header { margin-bottom: 60px; }
 }
 
