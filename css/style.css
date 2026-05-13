@@ -1138,7 +1138,6 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   letter-spacing: 0.15em;
 }
-@media (max-width: 768px) { .float-cta { display: none; } }
 
 /* ===== BOTTOM CTA ===== */
 .bottom-cta {
@@ -1215,8 +1214,7 @@ a { text-decoration: none; color: inherit; }
 .mobile-sticky-btn:hover { background: var(--gold-d); }
 
 @media (max-width: 768px) {
-  .mobile-sticky-cta { display: block; }
-  body { padding-bottom: 68px; }
+  .mobile-sticky-cta { display: none; }
 }
 
 /* ===== FOOTER ===== */
