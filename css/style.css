@@ -687,8 +687,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .cv2-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   margin: 40px 0 32px;
 }
