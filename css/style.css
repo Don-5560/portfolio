@@ -521,7 +521,7 @@ a { text-decoration: none; color: inherit; }
   background: linear-gradient(160deg, #fdf9f3 0%, #f0e4d0 100%);
   position: relative;
   overflow: hidden;
-  padding-top: 20px;
+  padding-top: 0;
 }
 .cv2-images img:nth-child(1) {
   margin-bottom: 20px;
