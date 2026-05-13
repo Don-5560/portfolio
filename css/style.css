@@ -1269,7 +1269,7 @@ a { text-decoration: none; color: inherit; }
   }
   .hero-btns .btn { justify-content: center; }
   .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
-  .hero { min-height: calc(100vh - 220px - 48px); }
+  .hero { min-height: calc(100vh - 160px - 48px); }
   .hero-content { padding: 100px 20px 60px; }
   .section-header { margin-bottom: 60px; }
 }
