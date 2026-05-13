@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金プラン一覧 | Shido Web Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noise-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+  </svg>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-mark"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L24 13L13 24L2 13Z" stroke="#c9a84c" stroke-width="1.2"/><path d="M13 8L18 13L13 18L8 13Z" fill="rgba(201,168,76,0.25)"/></svg></a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="index.html#works" class="nav-link">Works</a>
+        <a href="plan.html" class="nav-link nav-link--active">Service</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-right">
+        <div class="availability"><span class="avail-dot"></span><span class="avail-text">Available</span></div>
+        <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="profile.html" class="mobile-link">Profile</a>
+    <a href="index.html#works" class="mobile-link">Works</a>
+    <a href="plan.html" class="mobile-link">Service</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="plan-hero">
+    <div class="plan-hero-content">
+      <div class="section-eyebrow reveal-up">Service &amp; Price</div>
+      <h1 class="plan-hero-title reveal-up">料金プラン一覧</h1>
+      <p class="plan-hero-sub reveal-up">すべてのプランにスマホ対応・修正対応が含まれます。<br>現在のみモニター価格でご提供中。</p>
+    </div>
+  </section>
+
+  <!-- MAIN PLANS -->
+  <section class="plan-section">
+    <div class="container">
+      <div class="section-eyebrow reveal-up" style="text-align:center">Main Plans</div>
+      <h2 class="section-heading reveal-up" style="text-align:center;margin-bottom:56px">メインプラン</h2>
+      <div class="plan-main-grid">
+
+        <div class="plan-card reveal-up" style="--di:0s">
+          <div class="plan-card-header">
+            <span class="plan-badge">ENTRY</span>
+            <h3 class="plan-name">ワンページサイト</h3>
+            <p class="plan-desc">シンプルな1枚構成のWebサイト。まずはWeb上に存在感を持ちたいサロン向け。</p>
+          </div>
+          <div class="plan-price-area">
+            <span class="plan-price">¥20,000</span><span class="plan-suffix">〜</span>
+          </div>
+          <ul class="plan-list">
+            <li>スマホ完全対応</li>
+            <li>修正2回込み</li>
+            <li>お問い合わせフォーム</li>
+            <li>納期：約7日〜</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn-ghost btn-sm magnetic">相談する</a>
+        </div>
+
+        <div class="plan-card plan-card--popular reveal-up" style="--di:0.1s">
+          <div class="plan-popular-label">人気 No.1</div>
+          <div class="plan-card-header">
+            <span class="plan-badge plan-badge--gold">LP</span>
+            <h3 class="plan-name">ランディングページ</h3>
+            <p class="plan-desc">集客・予約獲得に特化した1ページ完結型のLP。キャンペーンやメニュー訴求に最適。</p>
+          </div>
+          <div class="plan-price-area">
+            <span class="plan-price">¥30,000</span><span class="plan-suffix">〜</span>
+          </div>
+          <ul class="plan-list">
+            <li>スマホ完全対応</li>
+            <li>修正3回込み</li>
+            <li>お問い合わせフォーム</li>
+            <li>アニメーション実装</li>
+            <li>納期：約10日〜</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn-primary btn-sm magnetic">相談する</a>
+        </div>
+
+        <div class="plan-card reveal-up" style="--di:0.2s">
+          <div class="plan-card-header">
+            <span class="plan-badge">WEB</span>
+            <h3 class="plan-name">コーポレートサイト</h3>
+            <p class="plan-desc">サロンの世界観を伝える複数ページ構成のWebサイト。集客・信頼構築・ブランディングに。</p>
+          </div>
+          <div class="plan-price-area">
+            <span class="plan-price">¥50,000</span><span class="plan-suffix">〜</span>
+          </div>
+          <ul class="plan-list">
+            <li>スマホ完全対応</li>
+            <li>修正5回込み</li>
+            <li>お問い合わせフォーム</li>
+            <li>Google Map埋め込み</li>
+            <li>アニメーション実装</li>
+            <li>納期：約21日〜</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn-ghost btn-sm magnetic">相談する</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section class="plan-section plan-section--dark">
+    <div class="container">
+      <div class="section-eyebrow reveal-up" style="text-align:center">Options</div>
+      <h2 class="section-heading reveal-up" style="text-align:center;margin-bottom:56px">オプション</h2>
+      <div class="option-grid">
+        <div class="option-card reveal-up" style="--di:0s">
+          <div class="option-icon">+P</div>
+          <h3 class="option-name">追加ページ</h3>
+          <p class="option-desc">コーポレートプランへのページ追加（メニュー・アクセス・スタッフ紹介など）。</p>
+          <div class="option-price">¥5,000<span>/ページ〜</span></div>
+        </div>
+        <div class="option-card reveal-up" style="--di:0.08s">
+          <div class="option-icon">SNS</div>
+          <h3 class="option-name">SNS用バナー制作</h3>
+          <p class="option-desc">Instagram・LINE用の告知バナー・アイキャッチ画像を制作。</p>
+          <div class="option-price">¥3,000<span>/枚〜</span></div>
+        </div>
+        <div class="option-card reveal-up" style="--di:0.16s">
+          <div class="option-icon">SEO</div>
+          <h3 class="option-name">SEO基本対策</h3>
+          <p class="option-desc">メタタグ・OGP設定・構造化データなど基本的なSEO施策を実施。</p>
+          <div class="option-price">¥5,000<span>〜</span></div>
+        </div>
+        <div class="option-card reveal-up" style="--di:0.24s">
+          <div class="option-icon">FIX</div>
+          <h3 class="option-name">追加修正対応</h3>
+          <p class="option-desc">プラン規定回数を超えた修正・テキスト変更・画像差し替えなど。</p>
+          <div class="option-price">¥2,000<span>/回〜</span></div>
+        </div>
+        <div class="option-card reveal-up" style="--di:0.32s">
+          <div class="option-icon">MAP</div>
+          <h3 class="option-name">Google Map設置</h3>
+          <p class="option-desc">サロンへのアクセスマップをサイトに埋め込みます。</p>
+          <div class="option-price">¥2,000<span>〜</span></div>
+        </div>
+        <div class="option-card reveal-up" style="--di:0.4s">
+          <div class="option-icon">保守</div>
+          <h3 class="option-name">月額保守プラン</h3>
+          <p class="option-desc">公開後の更新・テキスト変更・簡単な修正を月額でお任せいただけます。</p>
+          <div class="option-price">¥3,000<span>/月〜</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="plan-section">
+    <div class="container">
+      <div class="section-eyebrow reveal-up" style="text-align:center">FAQ</div>
+      <h2 class="section-heading reveal-up" style="text-align:center;margin-bottom:56px">よくある質問</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal-up">
+          <summary class="faq-q">支払い方法は？</summary>
+          <div class="faq-a">銀行振込にてお支払いいただきます。制作開始前に50%、納品時に残り50%をいただいております。</div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary class="faq-q">制作の流れを教えてください。</summary>
+          <div class="faq-a">① ご相談・ヒアリング → ② お見積もり → ③ ご入金（前払い50%）→ ④ 制作・確認 → ⑤ 納品・残金お支払い、の流れで進めます。</div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary class="faq-q">修正はどこまで対応していただけますか？</summary>
+          <div class="faq-a">テキスト・色・画像差し替えなどのマイナーな修正は規定回数内で対応します。構成・レイアウトの大幅変更は別途お見積もりになります。</div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary class="faq-q">写真・素材がない場合は？</summary>
+          <div class="faq-a">フリー素材をご提案します。サロンのお写真がある場合は、ご提供いただけると世界観により近いサイトが制作できます。</div>
+        </details>
+        <details class="faq-item reveal-up">
+          <summary class="faq-q">海外在住でも依頼できますか？</summary>
+          <div class="faq-a">もちろんです。オンライン完結で全国・海外どこからでもご依頼いただけます。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="plan-cta">
+    <div class="container">
+      <h2 class="plan-cta-title reveal-up">まずは無料相談から</h2>
+      <p class="plan-cta-sub reveal-up">お気軽にDMまたはメールでお問い合わせください。</p>
+      <div class="contact-btns reveal-up">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-instagram magnetic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram DM
+        </a>
+        <a href="mailto:your@email.com" class="btn btn-ghost magnetic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          メールで相談
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-logo"><svg width="22" height="22" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L24 13L13 24L2 13Z" stroke="#c9a84c" stroke-width="1.2"/><path d="M13 8L18 13L13 18L8 13Z" fill="rgba(201,168,76,0.25)"/></svg></p>
+      <p class="footer-copy">&copy; 2026 Shido. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.body.classList.remove('loading');
+    document.querySelectorAll('.reveal-up').forEach(el => {
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 }).observe(el);
+    });
+    setTimeout(() => document.querySelectorAll('.plan-hero .reveal-up').forEach(el => el.classList.add('visible')), 100);
+  </script>
+</body>
+</html>
