@@ -692,16 +692,17 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 6px;
   margin: 24px 0 20px;
+  padding: 0 30px;
 }
 .cv2-images img {
   width: 100%;
-  max-width: 520px;
+  max-width: 100%;
   height: auto;
 }
 
 .cv2-cta-img {
   display: block;
-  max-width: 520px;
+  max-width: 100%;
   width: 100%;
   animation: cta-pulse 2.2s ease-in-out infinite;
 }
