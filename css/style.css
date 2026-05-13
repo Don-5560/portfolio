@@ -689,13 +689,14 @@ a { text-decoration: none; color: inherit; }
 .cv2-images {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 24px;
   margin: 40px 0 32px;
 }
 .cv2-images img {
   width: 100%;
+  max-width: 680px;
   height: auto;
-  object-fit: contain;
 }
 
 .cv2-cta {
