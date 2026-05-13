@@ -688,21 +688,14 @@ a { text-decoration: none; color: inherit; }
 
 .cv2-images {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
   margin: 40px 0 32px;
 }
 .cv2-images img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
   object-fit: contain;
-}
-@media (min-width: 900px) {
-  .cv2-images {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
 }
 
 .cv2-cta {
