@@ -704,6 +704,9 @@ a { text-decoration: none; color: inherit; }
   max-width: 100%;
   height: auto;
 }
+.cv2-images img:nth-child(4) {
+  margin-bottom: 24px;
+}
 
 .cv2-cta-img {
   display: block;
