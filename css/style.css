@@ -699,6 +699,24 @@ a { text-decoration: none; color: inherit; }
   height: auto;
 }
 
+.cv2-cta-img {
+  display: block;
+  max-width: 520px;
+  width: 100%;
+  animation: cta-pulse 2.2s ease-in-out infinite;
+}
+.cv2-cta-img img {
+  animation: none;
+  transition: transform 0.2s;
+}
+.cv2-cta-img:hover img {
+  transform: scale(1.03);
+}
+@keyframes cta-pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 16px rgba(200,30,30,0)); }
+  50%       { transform: scale(1.02); filter: drop-shadow(0 8px 24px rgba(200,30,30,0.35)); }
+}
+
 .cv2-cta {
   text-align: center;
   margin-bottom: 24px;
