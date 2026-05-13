@@ -51,8 +51,18 @@ if (floatCta) {
 // ===== HEADER SCROLL =====
 const header = document.getElementById('header');
 if (header) {
+  let lastY = window.scrollY;
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
+    const currentY = window.scrollY;
+    header.classList.toggle('scrolled', currentY > 60);
+    if (window.innerWidth < 768) {
+      if (currentY > lastY && currentY > 60) {
+        header.classList.add('header--hidden');
+      } else {
+        header.classList.remove('header--hidden');
+      }
+    }
+    lastY = currentY;
   }, { passive: true });
 }
 
