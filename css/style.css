@@ -205,15 +205,14 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+  background: #0a0a0a;
 }
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('images/fuji-bg.jpg') center 60%/cover no-repeat;
-  opacity: 0.06;
-  filter: grayscale(100%);
+  background: url('images/hero-bg.jpg') center center/cover no-repeat;
+  opacity: 0.45;
   z-index: 0;
 }
 .hero::after { display: none; }
@@ -254,7 +253,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.2;
   letter-spacing: 0.04em;
   margin-bottom: 28px;
-  color: var(--text);
+  color: #ffffff;
 }
 .hero-line-wrap {
   display: block;
@@ -274,7 +273,7 @@ a { text-decoration: none; color: inherit; }
 .hero-sub-wrap { overflow: hidden; margin-bottom: 52px; }
 .hero-sub {
   font-size: clamp(14px, 1.8vw, 17px);
-  color: var(--muted);
+  color: rgba(255,255,255,0.75);
   letter-spacing: 0.08em;
   transform: translateY(100%);
   transition: transform 0.9s var(--ease-out) 0.7s;
@@ -295,6 +294,15 @@ a { text-decoration: none; color: inherit; }
   transition-delay: 0.9s;
 }
 .hero-btns.visible { opacity: 1; transform: translateY(0); }
+.hero-btns .btn-ghost {
+  border-color: rgba(255,255,255,0.4);
+  color: #ffffff;
+}
+.hero-btns .btn-ghost:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--text);
+}
 
 .scroll-hint {
   position: absolute;
@@ -309,7 +317,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   text-transform: uppercase;
   opacity: 0;
   animation: fadeInHint 0.8s var(--ease-out) 1.6s forwards;
