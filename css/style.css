@@ -205,15 +205,14 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+  background: #000;
 }
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: url('../images/mainvisual-01.PNG') center center/cover no-repeat;
-  opacity: 0.06;
-  filter: grayscale(100%);
+  opacity: 1;
   z-index: 0;
 }
 .hero::after { display: none; }
@@ -1257,7 +1256,7 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 768px) {
   .section { padding: 100px 0; }
-  .campaign-v2 { padding-top: 32px; }
+  .campaign-v2 { padding-top: 64px; padding-left: 20px; padding-right: 20px; }
   .nav, .availability { display: none; }
   .hamburger { display: flex; }
   .works-grid { grid-template-columns: 1fr; }
