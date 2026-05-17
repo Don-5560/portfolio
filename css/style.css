@@ -211,7 +211,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('images/fuji-bg.jpg') center 60%/cover no-repeat;
+  background: url('../images/mainvisual-01.PNG') center center/cover no-repeat;
   opacity: 0.06;
   filter: grayscale(100%);
   z-index: 0;
