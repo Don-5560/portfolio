@@ -1142,6 +1142,8 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .works-grid { grid-template-columns: 1fr 1fr; }
+  .works-nav { display: none !important; }
+  .works-carousel { display: block; }
 }
 
 @media (max-width: 768px) {
