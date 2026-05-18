@@ -451,10 +451,10 @@
 
 @media (max-width: 768px) {
   .cv2-pc-row {
-    display: none;
+    display: none !important;
   }
   .cv2-mobile-cards {
-    display: block;
+    display: block !important;
   }
   .cv2-mobile-cards img {
     width: 100%;
