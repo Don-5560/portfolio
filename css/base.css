@@ -288,6 +288,16 @@ a { text-decoration: none; color: inherit; }
 .btn-lg { padding: 18px 44px; font-size: 16px; }
 .btn-sm { padding: 10px 22px; font-size: 13px; }
 
+.btn-line {
+  background: #06C755;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(6,199,85,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.btn-line:hover {
+  background: #05b34c;
+  box-shadow: 0 12px 32px rgba(6,199,85,0.4);
+}
+
 .btn-gold {
   background: linear-gradient(160deg, #d9b86a 0%, #C8A75B 40%, #a8862a 100%);
   color: #fff;

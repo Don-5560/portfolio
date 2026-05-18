@@ -117,3 +117,14 @@
   color: var(--text-muted);
   margin-bottom: 20px;
 }
+
+.contact-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-btns .btn {
+  min-width: 180px;
+  justify-content: center;
+}
