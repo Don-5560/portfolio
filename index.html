@@ -69,6 +69,7 @@
       <div class="hero-label-wrap">
         <span class="label-bar"></span>
         <p class="hero-label">For Salon &amp; Beauty Owners</p>
+        <span class="label-bar"></span>
       </div>
       <h1 class="hero-title">
         <span class="hero-line-wrap"><span class="hero-line" style="--d:0.1s">集客につながる</span></span>
@@ -83,7 +84,8 @@
         <a href="#works" class="btn btn-ghost">実績を見る</a>
       </div>
     </div>
-  <!-- TRUST BAR -->
+
+  <!-- TRUST BAR (absolute at bottom of hero) -->
   <div class="trust-bar">
     <div class="container">
       <div class="trust-bar-grid">
@@ -127,10 +129,11 @@
     </div>
   </div>
 
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
+  <!-- SCROLL HINT -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
 
   </section>
 
@@ -187,6 +190,92 @@
     </p>
   </section>
 
+  <!-- WORKS -->
+  <section class="works section" id="works">
+    <div class="container">
+      <div class="works-header reveal-up">
+        <div class="section-header" style="margin-bottom:0">
+          <div class="section-eyebrow">Works</div>
+          <h2 class="section-heading split-title">制作実績</h2>
+          <p class="section-note">業種や目的に合わせて、成果につながるWebを制作しています。</p>
+        </div>
+        <a href="#" class="btn btn-ghost btn-sm works-all-btn">すべての実績を見る →</a>
+      </div>
+      <div class="works-carousel">
+        <button class="works-nav works-nav--prev" aria-label="前へ">&#8249;</button>
+        <div class="works-grid">
+
+        <article class="work-card reveal-up" style="--di:0s">
+          <div class="card-img">
+            <img src="images/works/work1.jpg" alt="美容室Lily様" onerror="this.style.background='var(--bg-2)'">
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <h3 class="card-client">美容室Lily様</h3>
+              <span class="card-category">美容室・サロン</span>
+            </div>
+            <span class="card-metric-label">予約数</span>
+            <div class="card-bottom-row">
+              <span class="card-metric-value">164%<small>UP</small></span>
+              <a href="#" class="card-detail-link">詳しく見る →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal-up" style="--di:0.1s">
+          <div class="card-img">
+            <img src="images/works/work2.jpg" alt="カフェ＆バーnico様" onerror="this.style.background='var(--bg-2)'">
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <h3 class="card-client">カフェ＆バー nico様</h3>
+              <span class="card-category">飲食店</span>
+            </div>
+            <span class="card-metric-label">来店予約数</span>
+            <div class="card-bottom-row">
+              <span class="card-metric-value">2.3<small>倍</small></span>
+              <a href="#" class="card-detail-link">詳しく見る →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal-up" style="--di:0.2s">
+          <div class="card-img">
+            <img src="images/works/work3.jpg" alt="ネイルサロンH様" onerror="this.style.background='var(--bg-2)'">
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <h3 class="card-client">ネイルサロンH様</h3>
+              <span class="card-category">ネイルサロン</span>
+            </div>
+            <span class="card-metric-label">新規客数</span>
+            <div class="card-bottom-row">
+              <span class="card-metric-value">月+<small>18名</small></span>
+              <a href="#" class="card-detail-link">詳しく見る →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card work-card--soon reveal-up" style="--di:0.3s">
+          <div class="card-img card-img--soon"></div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <h3 class="card-client">制作中...</h3>
+              <span class="card-category">Coming Soon</span>
+            </div>
+            <span class="card-metric-label">新作準備中です。お楽しみに。</span>
+            <div class="card-bottom-row">
+              <span class="card-metric-value" style="color:var(--border)">—</span>
+            </div>
+          </div>
+        </article>
+
+        </div>
+        <button class="works-nav works-nav--next" aria-label="次へ">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
   <!-- VOICES -->
   <section class="voices section" id="voices">
     <div class="container">
@@ -236,82 +325,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- WORKS -->
-  <section class="works section" id="works">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow reveal-up">Works</div>
-        <h2 class="section-heading split-title reveal-up">制作実績</h2>
-      </div>
-      <div class="works-grid">
-
-        <article class="work-card tilt-card reveal-up" style="--di:0s">
-          <div class="card-img">
-            <img src="images/works/work1.jpg" alt="サロンLP" onerror="this.style.display='none'">
-            <div class="card-placeholder">Work 01</div>
-            <div class="card-shine"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">サロンLP 模写制作</h3>
-            <p class="card-desc">高級感のあるビューティーサロン向けランディングページ。</p>
-            <div class="card-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card tilt-card reveal-up" style="--di:0.1s">
-          <div class="card-img">
-            <img src="images/works/work2.jpg" alt="コーポレート" onerror="this.style.display='none'">
-            <div class="card-placeholder">Work 02</div>
-            <div class="card-shine"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">コーポレートサイト 模写制作</h3>
-            <p class="card-desc">スタイリッシュな企業サイトのレスポンシブ対応コーディング。</p>
-            <div class="card-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card tilt-card reveal-up" style="--di:0.2s">
-          <div class="card-img">
-            <img src="images/works/work3.jpg" alt="ネイルサロン" onerror="this.style.display='none'">
-            <div class="card-placeholder">Work 03</div>
-            <div class="card-shine"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">ネイルサロンLP 模写制作</h3>
-            <p class="card-desc">女性向けネイルサロンのLP。フォームとアニメーションを実装。</p>
-            <div class="card-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Flexbox</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card work-card--soon tilt-card reveal-up" style="--di:0.3s">
-          <div class="card-img card-img--soon">
-            <div class="card-shine"></div>
-            <span class="coming-badge">Coming Soon</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">制作中...</h3>
-            <p class="card-desc">新作準備中です。お楽しみに。</p>
-            <div class="card-tags">
-              <span class="tag tag--dim">Figma</span><span class="tag tag--dim">LP</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-      <div class="section-cta reveal-up">
-        <p class="section-cta-text">あなたのサロンにも、集客につながるWebサイトを。</p>
-        <a href="contact.html" class="btn btn-gold btn-lg">無料相談をする →</a>
       </div>
     </div>
   </section>
