@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>DoNラボ ｜ 管理画面（回答一覧）</title>
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --ink-soft:#4a4a4a;
+    --line:#e3e3e3;
+    --line-soft:#efefef;
+    --paper:#ffffff;
+    --mist:#f7f7f6;
+    --gold:#b8933f;
+    --gold-soft:#f4ead3;
+    --danger:#c0392b;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{
+    margin:0;
+    font-family:'Hiragino Sans','Noto Sans JP',sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.7;
+  }
+
+  /* ---------- ログイン（トークン入力）画面 ---------- */
+  #gate{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  #gate .box{
+    width:100%;
+    max-width:360px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:32px 28px;
+    text-align:center;
+  }
+  #gate h1{ font-size:18px; margin:0 0 8px; }
+  #gate p{ font-size:13px; color:var(--ink-soft); margin:0 0 20px; }
+  #gate input{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:15px;
+    margin-bottom:12px;
+  }
+  #gate button, .btn{
+    width:100%;
+    padding:12px 14px;
+    border:none;
+    border-radius:8px;
+    background:var(--gold);
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  #gate .error{ color:var(--danger); font-size:13px; margin-top:10px; min-height:18px; }
+
+  /* ---------- 管理画面本体 ---------- */
+  #app{ display:none; max-width:900px; margin:0 auto; padding:32px 20px 80px; }
+  header.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+  }
+  header.topbar h1{ font-size:20px; margin:0; }
+  header.topbar .actions{ display:flex; gap:8px; }
+  header.topbar button{
+    padding:8px 14px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+  }
+
+  #search{
+    width:100%;
+    padding:10px 14px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+
+  #status{ font-size:13px; color:var(--ink-soft); margin-bottom:16px; }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:16px;
+  }
+  .card h2{
+    font-size:16px;
+    margin:0 0 4px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:baseline;
+  }
+  .card h2 .genre{
+    font-size:12px;
+    font-weight:700;
+    color:var(--gold);
+    background:var(--gold-soft);
+    padding:2px 8px;
+    border-radius:999px;
+  }
+  .card .timestamp{ font-size:12px; color:#999; margin-bottom:14px; }
+
+  .field{ margin-bottom:10px; font-size:14px; }
+  .field .label{ font-weight:700; color:var(--ink-soft); margin-right:4px; }
+  .field .value{ white-space:pre-wrap; word-break:break-word; }
+
+  .images{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .images a{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-size:12px;
+    color:var(--gold);
+    text-decoration:none;
+  }
+
+  #empty{ text-align:center; color:var(--ink-soft); padding:60px 0; display:none; }
+</style>
+</head>
+<body>
+
+  <!-- 合言葉（トークン）入力画面。トークンはコードに書かず、毎回ここで入力する -->
+  <div id="gate">
+    <div class="box">
+      <h1>DoNラボ 管理画面</h1>
+      <p>合言葉（トークン）を入力してください</p>
+      <input type="password" id="token-input" placeholder="トークン" autocomplete="off">
+      <button id="login-btn">開く</button>
+      <div class="error" id="gate-error"></div>
+    </div>
+  </div>
+
+  <!-- 本体：ログイン後に表示 -->
+  <div id="app">
+    <header class="topbar">
+      <h1>回答一覧</h1>
+      <div class="actions">
+        <button id="refresh-btn">再読み込み</button>
+        <button id="logout-btn">ログアウト</button>
+      </div>
+    </header>
+
+    <input type="text" id="search" placeholder="サロン名・エリア・業種で検索">
+    <div id="status"></div>
+
+    <div id="list"></div>
+    <div id="empty">まだ回答がありません</div>
+  </div>
+
+<script>
+  // ↓ donlab-form.html の GAS_URL と同じもの（デプロイ後のウェブアプリURL）を入れる
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbyx0GcAhCH8D6e2ur1ILvftdjpfSHJm_HzBf_yrwxq-sq0flee1bV50TTQeGzBT_hZn/exec";
+
+  // トークンはsessionStorageのみに保持（タブを閉じれば消える。localStorageやコードには書かない）
+  const TOKEN_KEY = 'donlab_admin_token';
+
+  const gate       = document.getElementById('gate');
+  const app        = document.getElementById('app');
+  const tokenInput = document.getElementById('token-input');
+  const loginBtn   = document.getElementById('login-btn');
+  const gateError  = document.getElementById('gate-error');
+  const refreshBtn = document.getElementById('refresh-btn');
+  const logoutBtn  = document.getElementById('logout-btn');
+  const searchBox  = document.getElementById('search');
+  const statusEl   = document.getElementById('status');
+  const listEl     = document.getElementById('list');
+  const emptyEl    = document.getElementById('empty');
+
+  let allRows = [];
+
+  // 表示したい項目（キー：シートの列名 / ラベル：画面表示名）
+  const FIELD_MAP = [
+    ['エリア', 'エリア'],
+    ['Instagram', 'Instagram'],
+    ['コンセプト', 'コンセプト（どんなお店？）'],
+    ['オーナーの想い', 'オーナーの想い'],
+    ['ターゲット', 'ターゲット'],
+    ['テイスト', 'テイスト'],
+    ['色系統', '色系統'],
+    ['カスタム色', 'カスタム色'],
+    ['参考サイト', '参考サイト・アカウント'],
+    ['追加セクション', '追加したいセクション'],
+    ['その他セクション', 'その他の要望'],
+  ];
+
+  function escapeHtml(str){
+    return String(str ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[c]));
+  }
+
+  function renderCard(row){
+    const salon = row['サロン名'] || '（サロン名未回答）';
+    const genre = row['業種'] || '未回答';
+    const ts = row['タイムスタンプ'] || '';
+
+    let html = `<div class="card">`;
+    html += `<h2>${escapeHtml(salon)} <span class="genre">${escapeHtml(genre)}</span></h2>`;
+    html += `<div class="timestamp">受信日時：${escapeHtml(ts)}</div>`;
+
+    FIELD_MAP.forEach(([key, label]) => {
+      const value = row[key];
+      if(!value || String(value).trim() === '') return;
+      html += `<div class="field"><span class="label">${escapeHtml(label)}：</span><span class="value">${escapeHtml(value)}</span></div>`;
+    });
+
+    const imageUrls = String(row['画像URL'] || '').split('\n').filter(Boolean);
+    if(imageUrls.length){
+      html += `<div class="images">`;
+      imageUrls.forEach((url, i) => {
+        html += `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">写真${i+1}</a>`;
+      });
+      html += `</div>`;
+    }
+
+    html += `</div>`;
+    return html;
+  }
+
+  function render(){
+    const q = searchBox.value.trim().toLowerCase();
+    const filtered = allRows.filter(row => {
+      if(!q) return true;
+      const haystack = [row['サロン名'], row['エリア'], row['業種']].join(' ').toLowerCase();
+      return haystack.includes(q);
+    });
+
+    listEl.innerHTML = filtered.map(renderCard).join('');
+    emptyEl.style.display = filtered.length ? 'none' : 'block';
+    statusEl.textContent = `${filtered.length}件（全${allRows.length}件）`;
+  }
+
+  async function loadData(token){
+    statusEl.textContent = '読み込み中…';
+    const res = await fetch(`${GAS_URL}?token=${encodeURIComponent(token)}`);
+    const json = await res.json();
+    if(json.result !== 'ok'){
+      throw new Error(json.message || '取得に失敗しました');
+    }
+    // 新しい回答を上に表示
+    allRows = json.data.slice().reverse();
+    render();
+  }
+
+  function showApp(){
+    gate.style.display = 'none';
+    app.style.display = 'block';
+  }
+
+  function showGate(message){
+    app.style.display = 'none';
+    gate.style.display = 'flex';
+    gateError.textContent = message || '';
+  }
+
+  async function tryLogin(token){
+    if(!token){
+      gateError.textContent = 'トークンを入力してください';
+      return;
+    }
+    loginBtn.disabled = true;
+    loginBtn.textContent = '確認中…';
+    try{
+      await loadData(token);
+      sessionStorage.setItem(TOKEN_KEY, token);
+      showApp();
+    }catch(err){
+      showGate(err.message);
+    }finally{
+      loginBtn.disabled = false;
+      loginBtn.textContent = '開く';
+    }
+  }
+
+  loginBtn.addEventListener('click', () => tryLogin(tokenInput.value.trim()));
+  tokenInput.addEventListener('keydown', e => {
+    if(e.key === 'Enter') tryLogin(tokenInput.value.trim());
+  });
+
+  refreshBtn.addEventListener('click', () => {
+    const token = sessionStorage.getItem(TOKEN_KEY);
+    if(token) loadData(token).catch(err => alert(err.message));
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    sessionStorage.removeItem(TOKEN_KEY);
+    tokenInput.value = '';
+    showGate();
+  });
+
+  searchBox.addEventListener('input', render);
+
+  // ページを開いた時、同じタブ内で既にログイン済みなら自動で読み込む
+  (function init(){
+    const saved = sessionStorage.getItem(TOKEN_KEY);
+    if(saved){
+      loadData(saved).then(showApp).catch(() => showGate());
+    }
+  })();
+</script>
+</body>
+</html>
